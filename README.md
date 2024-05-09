@@ -40,7 +40,7 @@ or if you still struggle with huggingface, you may try follow [hf-mirror](https:
 或者下载[权重文件](https://pan.quark.cn/s/e5057be01087)解压后把`pretrained_models`整个文件夹放进`ComfyUI-XTTS`目录
 
 ## Tutorial
-todo
+[Demo](https://www.bilibili.com/video/BV13f421m7uv)
 
 ## WeChat Group && Donate
 <div>
