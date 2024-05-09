@@ -98,9 +98,9 @@ class XTTS_INFER_SRT:
                 start_time = text_sub.start.total_seconds() * 1000
                 end_time = text_sub.end.total_seconds() * 1000
                 speaker = 'SPK'+text_sub.content[0]
-                if spk_aduio_dict[speaker] is not None:
+                try:
                     spk_aduio_dict[speaker] += audio_seg[start_time:end_time]
-                else:
+                except:
                     spk_aduio_dict[speaker] = audio_seg[start_time:end_time]
             for speaker in spk_aduio_dict.keys():
                 speaker_audio_seg = spk_aduio_dict[speaker]
@@ -120,8 +120,8 @@ class XTTS_INFER_SRT:
                 
             new_text = text_sub.content
             if if_mutiple_speaker:
-                new_text = new_text[1:]
                 speaker = "SPK" + new_text[0]
+                new_text = new_text[1:]
             else:
                 speaker = "SPK0"
             gpt_cond_latent,speaker_embedding = gpt_embedding_dict[speaker]
@@ -295,7 +295,7 @@ class PreViewAudio:
 class LoadAudio:
     @classmethod
     def INPUT_TYPES(s):
-        files = [f for f in os.listdir(input_path) if os.path.isfile(os.path.join(input_path, f)) and f.split('.')[-1] in ["wav", "mp3","WAV","flac","m4a"]]
+        files = [f for f in os.listdir(input_path) if os.path.isfile(os.path.join(input_path, f)) and f.split('.')[-1].lower() in ["wav", "mp3","flac","m4a"]]
         return {"required":
                     {"audio": (sorted(files),)},
                 }
