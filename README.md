@@ -37,10 +37,10 @@ pip install -r requirements.txt
 `weights` will be downloaded from huggingface automatically! if you in china,make sure your internet attach the huggingface
 or if you still struggle with huggingface, you may try follow [hf-mirror](https://hf-mirror.com/) to config your env.
 
-或者下载[权重文件](https://pan.quark.cn/s/e5057be01087)解压后把`pretrained_models`整个文件夹放进`ComfyUI-XTTS`目录
+或者下载[权重文件]()解压后把`pretrained_models`整个文件夹放进`ComfyUI-XTTS`目录
 
 ## Tutorial
-[Demo](https://www.bilibili.com/video/BV13f421m7uv)
+[Demo](https://www.bilibili.com/video/BV1Wt421u7tu)
 
 ## WeChat Group && Donate
 <div>
