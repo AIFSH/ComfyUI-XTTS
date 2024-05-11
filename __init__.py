@@ -52,7 +52,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "XTTS_INFER_SRT": "XTTS Inference with srt"
 }
 
-@PromptServer.instance.routes.get("/gpt_sovits/reboot")
+@PromptServer.instance.routes.get("/xtts/reboot")
 def restart(self):
     try:
         sys.stdout.close_log()
