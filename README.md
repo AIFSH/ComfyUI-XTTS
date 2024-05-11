@@ -37,10 +37,25 @@ pip install -r requirements.txt
 `weights` will be downloaded from huggingface automatically! if you in china,make sure your internet attach the huggingface
 or if you still struggle with huggingface, you may try follow [hf-mirror](https://hf-mirror.com/) to config your env.
 
-或者下载[权重文件]()解压后把`pretrained_models`整个文件夹放进`ComfyUI-XTTS`目录
+或者下载[权重文件](https://pan.quark.cn/s/43917b8b8572)解压后把`pretrained_models`整个文件夹放进`ComfyUI-XTTS`目录
 
 ## Tutorial
 [Demo](https://www.bilibili.com/video/BV1Wt421u7tu)
+
+## Params
+
+- `temperature`: The softmax temperature of the autoregressive model. Defaults to 0.65.
+
+- `length_penalty`: A length penalty applied to the autoregressive decoder. Higher settings causes the model to produce more terse outputs. Defaults to 1.0.
+
+- `repetition_penalty`: A penalty that prevents the autoregressive decoder from repeating itself during decoding. Can be used to reduce the incidence of long silences or “uhhhhhhs”, etc. Defaults to 2.0.
+
+- `top_k`: Lower values mean the decoder produces more “likely” (aka boring) outputs. Defaults to 50.
+
+- `top_p`: Lower values mean the decoder produces more “likely” (aka boring) outputs. Defaults to 0.8.
+
+- `speed`: The speed rate of the generated audio. Defaults to 1.0. (can produce artifacts if far from 1.0)
+
 
 ## WeChat Group && Donate
 <div>
