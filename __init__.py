@@ -28,7 +28,7 @@ if os.path.isfile("%s/XTTS.pth" % (site_packages_root)):
 
 
 WEB_DIRECTORY = "./web"
-from .nodes import LoadSRT,LoadAudio, PreViewAudio,XTTS_INFER, XTTS_INFER_SRT
+from .nodes import LoadSRT,LoadAudioPath, PreViewAudio,XTTS_INFER, XTTS_INFER_SRT
 
 # Set the web directory, any .js file in that directory will be loaded by the frontend as a frontend extension
 # WEB_DIRECTORY = "./somejs"
@@ -36,7 +36,7 @@ from .nodes import LoadSRT,LoadAudio, PreViewAudio,XTTS_INFER, XTTS_INFER_SRT
 # A dictionary that contains all nodes you want to export with their names
 # NOTE: names should be globally unique
 NODE_CLASS_MAPPINGS = {
-    "LoadAudio": LoadAudio,
+    "LoadAudioPath": LoadAudioPath,
     "PreViewAudio": PreViewAudio,
     "LoadSRT": LoadSRT,
     "XTTS_INFER": XTTS_INFER,
@@ -45,7 +45,7 @@ NODE_CLASS_MAPPINGS = {
 
 # A dictionary that contains the friendly/humanly readable titles for the nodes
 NODE_DISPLAY_NAME_MAPPINGS = {
-    "LoadAudio": "AudioLoader",
+    "LoadAudioPath": "LoadAudioPath",
     "PreViewAudio": "PreView Audio",
     "LoadSRT": "SRT FILE Loader",
     "XTTS_INFER": "XTTS Inference",
