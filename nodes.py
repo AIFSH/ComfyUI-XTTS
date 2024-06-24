@@ -26,7 +26,7 @@ class XTTS_INFER_SRT:
         return {"required":
                     {
                      "text": ("SRT",),
-                     "prompt_audio": ("AUDIO",),
+                     "prompt_audio": ("AUDIOPATH",),
                      "language": (language_list,{
                          "default": "zh-cn"
                      }),
@@ -65,7 +65,7 @@ class XTTS_INFER_SRT:
     CATEGORY = "AIFSH_XTTS"
     DESCRIPTION = "hello world!"
 
-    RETURN_TYPES = ("AUDIO",)
+    RETURN_TYPES = ("AUDIOPATH",)
 
     OUTPUT_NODE = False
 
@@ -189,7 +189,7 @@ class XTTS_INFER:
     @classmethod
     def INPUT_TYPES(s):
         return {"required":
-                    {"audio": ("AUDIO",),
+                    {"audio": ("AUDIOPATH",),
                      "text": ("STRING",{
                          "default": "你好啊！世界",
                          "multiline": True
@@ -229,7 +229,7 @@ class XTTS_INFER:
     CATEGORY = "AIFSH_XTTS"
     DESCRIPTION = "hello world!"
 
-    RETURN_TYPES = ("AUDIO",)
+    RETURN_TYPES = ("AUDIOPATH",)
 
     OUTPUT_NODE = False
 
@@ -274,7 +274,7 @@ class PreViewAudio:
     @classmethod
     def INPUT_TYPES(s):
         return {"required":
-                    {"audio": ("AUDIO",),}
+                    {"audio": ("AUDIOPATH",),}
                 }
 
     CATEGORY = "AIFSH_XTTS"
@@ -292,7 +292,7 @@ class PreViewAudio:
         audio_root = os.path.basename(tmp_path)
         return {"ui": {"audio":[audio_name,audio_root]}}
 
-class LoadAudio:
+class LoadAudioPath:
     @classmethod
     def INPUT_TYPES(s):
         files = [f for f in os.listdir(input_path) if os.path.isfile(os.path.join(input_path, f)) and f.split('.')[-1].lower() in ["wav", "mp3","flac","m4a"]]
@@ -302,7 +302,7 @@ class LoadAudio:
 
     CATEGORY = "AIFSH_XTTS"
 
-    RETURN_TYPES = ("AUDIO",)
+    RETURN_TYPES = ("AUDIOPATH",)
     FUNCTION = "load_audio"
 
     def load_audio(self, audio):
